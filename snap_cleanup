@@ -6,12 +6,25 @@
 # Copyright (c) 2024 Mario Herrmann. All rights reserved.
 #-------------------------------------------------------------------------------
 
-LANG=$(locale -a | grep -oP '(en_US|de_DE|fr_FR)')
+LOCALE=${LANG%%.*}
 
-case $LANG in
+case $LOCALE in
   en_US) DISABLED="disabled";;
   de_DE) DISABLED="deaktiviert";;
   fr_FR) DISABLED="désactivé";;
+  it_IT) DISABLED="disabilitato";;
+  es_ES) DISABLED="desactivado";;
+  pt_PT) DISABLED="desativado";;
+  nl_NL) DISABLED="uitgeschakeld";;
+  pl_PL) DISABLED="wyłączony";;
+  ru_RU) DISABLED="отключен";;
+  sv_SE) DISABLED="inaktiverad";;
+  da_DK) DISABLED="deaktiveret";;
+  no_NO) DISABLED="deaktivert";;
+  fi_FI) DISABLED="pois kiinni";;
+  cs_CZ) DISABLED="deaktivován";;
+  hu_HU) DISABLED="kikapcsolva";;
+  el_GR) DISABLED="απενεργοποιημένο";;
   *) DISABLED="disabled";;
 esac
 
